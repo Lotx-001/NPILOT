@@ -62,7 +62,7 @@ class CarInterface(CarInterfaceBase):
     elif lateral_control == 'LQR':
       ret.lateralTuning.init('lqr')
 
-      ret.lateralTuning.lqr.scale = 1800.0
+      ret.lateralTuning.lqr.scale = 2000.
       ret.lateralTuning.lqr.ki = 0.12
       ret.lateralTuning.lqr.dcGain = 0.0285
 
