@@ -54,8 +54,8 @@ class nTune():
       ctrl.A = np.array([0., 1., -0.22619643, 1.21822268]).reshape((2, 2))
       ctrl.B = np.array([-1.92006585e-04, 3.95603032e-05]).reshape((2, 1))
       ctrl.C = np.array([1., 0.]).reshape((1, 2))
-      ctrl.K = np.array([-110., 451.]).reshape((1, 2))
-      ctrl.L = np.array([0.33, 0.318]).reshape((2, 1))
+      ctrl.K = np.array([-100., 450.]).reshape((1, 2))
+      ctrl.L = np.array([0.22, 0.318]).reshape((2, 1))
     elif "LatControlTorque" in str(type(ctrl)):
       self.type = LatType.TORQUE
       self.file = CONF_LAT_TORQUE_FILE
@@ -173,16 +173,16 @@ class nTune():
     if self.checkValue("useLiveSteerRatio", 0., 1., 1.):
       updated = True
 
-    if self.checkValue("steerRatio", 10.0, 20.0, 16.5, 18.0):
+    if self.checkValue("steerRatio", 10.0, 20.0, 16.5, 1750.0):
       updated = True
 
     if self.checkValue("steerActuatorDelay", 0., 0.8, 0.1):
       updated = True
 
-    if self.checkValue("steerRateCost", 0.1, 1.5, 0.41):
+    if self.checkValue("steerRateCost", 0.1, 1.5, 0.05):
       updated = True
 
-    if self.checkValue("pathOffset", 0.0, 1.0, 0.0):
+    if self.checkValue("pathOffset", 0.0, 0.0, 0.0):
       updated = True
 
     return updated
@@ -190,13 +190,13 @@ class nTune():
   def checkValidLQR(self):
     updated = False
 
-    if self.checkValue("scale", 500.0, 5000.0, 1600.0, 1800.0):
+    if self.checkValue("scale", 500.0, 5000.0, 1600.0, 1750.0):
       updated = True
 
     if self.checkValue("ki", 0.0, 0.2, 0.01, 0.03, 0.012):
       updated = True
 
-    if self.checkValue("dcGain", 0.002, 0.004, 0.0285):
+    if self.checkValue("dcGain", 0.002, 0.003, 0.004, 0.0285):
       updated = True
 
     if self.checkValue("steerLimitTimer", 0.5, 3.0, 1.5):
