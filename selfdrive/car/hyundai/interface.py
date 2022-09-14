@@ -84,11 +84,11 @@ class CarInterface(CarInterfaceBase):
       ret.lateralTuning.torque.deadzone = 0.0
 
 
-    ret.steerRatio = 16.5
+    ret.steerRatio = 1800.0
     ret.steerActuatorDelay = 0.1
-    ret.steerRateCost = 0.4
+    ret.steerRateCost = 0.41
 
-    ret.steerLimitTimer = 2.5
+    ret.steerLimitTimer = 1.5
 
     # longitudinal
     ret.longitudinalTuning.kpBP = [0., 5.*CV.KPH_TO_MS, 10.*CV.KPH_TO_MS, 30.*CV.KPH_TO_MS, 130.*CV.KPH_TO_MS]
