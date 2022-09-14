@@ -179,7 +179,7 @@ class nTune():
     if self.checkValue("steerActuatorDelay", 0., 0.8, 0.1):
       updated = True
 
-    if self.checkValue("steerRateCost", 0.1, 1.5, 0.05):
+    if self.checkValue("steerRateCost", 0.1, 1.5, 0.5):
       updated = True
 
     if self.checkValue("pathOffset", 0.0, 0.0, 0.0):
