@@ -62,7 +62,7 @@ class CarInterface(CarInterfaceBase):
     elif lateral_control == 'LQR':
       ret.lateralTuning.init('lqr')
 
-      ret.lateralTuning.lqr.scale = 2000.
+      ret.lateralTuning.lqr.scale = 1800.0
       ret.lateralTuning.lqr.ki = 0.12
       ret.lateralTuning.lqr.dcGain = 0.0285
 
@@ -306,8 +306,8 @@ class CarInterface(CarInterfaceBase):
       ret.centerToFront = ret.wheelbase * 0.4
       tire_stiffness_factor = 0.8
 
-      ret.steerRatio = 14.5
-      ret.steerRateCost = 0.4
+      ret.steerRatio = 1800.0
+      ret.steerRateCost = 0.41
 
       if ret.lateralTuning.which() == 'torque':
         ret.lateralTuning.torque.useSteeringAngle = True
