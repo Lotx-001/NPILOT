@@ -86,7 +86,7 @@ class CarInterface(CarInterfaceBase):
 
     ret.steerRatio = 1750.0
     ret.steerActuatorDelay = 0.1
-    ret.steerRateCost = 0.5
+    ret.steerRateCost = 0.05
 
     ret.steerLimitTimer = 1.5
 
